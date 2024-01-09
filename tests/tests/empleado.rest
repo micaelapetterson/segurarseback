@@ -1,0 +1,125 @@
+################# Empleado #################
+
+### Get
+GET http://127.0.0.1:8000/api/empleado
+Authorization: Bearer 3|enL7SmJC5rdt4uepzVC9qK8IwFAD6Ka8RCvFtwYL74e80242
+
+### Get
+GET http://127.0.0.1:8000/api/getEmpleados
+Authorization: Bearer 3|enL7SmJC5rdt4uepzVC9qK8IwFAD6Ka8RCvFtwYL74e80242
+
+### Get Paginate #return http().get(`/getEmpleados?page=${page}&limit=${limit}`);
+GET http://127.0.0.1:8000/api/getEmpleados?page=1&limit=10&puesto=&signo=%3E&antiguedad=1
+Authorization: Bearer 3|enL7SmJC5rdt4uepzVC9qK8IwFAD6Ka8RCvFtwYL74e80242
+
+### Register
+POST http://127.0.0.1:8000/api/empleado
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 3|enL7SmJC5rdt4uepzVC9qK8IwFAD6Ka8RCvFtwYL74e80242
+
+{
+    "nombre": "Nombre 100",
+    "apellido": "Apellido 100",
+    "salario": 900000,
+    "antiguedad": 1,
+    "puesto_id": 1
+}
+
+### update
+PUT http://127.0.0.1:8000/api/empleado/3
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+{
+    "nombre": "Nombre 18",
+    "apellido": "Apellido 18",
+    "salario": 700000.00,
+    "antiguedad": 1,
+    "puesto_id": 1
+    
+}
+
+### delete
+DELETE http://127.0.0.1:8000/api/empleado/3
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+
+################# Gestor Empleado #################
+
+### Register
+POST http://127.0.0.1:8000/api/agregarEmpleado
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+{
+    "nombre": "Nombre 21",
+    "apellido": "Apellido 21",
+    "salario": 1100000,
+    "antiguedad": 1,
+    "puesto_id": 1
+}
+
+### Salario Promedio
+GET http://127.0.0.1:8000/api/salarioPromedio
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+### Incrementar todos los Salarios
+POST http://127.0.0.1:8000/api/incrementarSalariosAll
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+{
+    "porcentaje": 5
+}
+
+### Incrementar Salarios ### Se prueba con la función de arriba (incrementarSalariosAll)
+POST http://127.0.0.1:8000/api/incrementarSalarios
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+{
+    "porcentaje": 5
+}
+
+### Visualizar Salarios
+GET http://127.0.0.1:8000/api/visualizarSalarios
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+################# Puestos #################
+
+### Puestos
+GET http://127.0.0.1:8000/api/getPuestos
+Authorization: Bearer 1|3i7HowXmzteTWo24QwSt0C3fgxV3rSDumxmePcNied7eb46d
+
+################# Login #################
+
+### login
+POST http://127.0.0.1:8000/api/v1/auth/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email": "admin@example.com",
+    "password": "password"
+}
+
+### Perfil
+GET http://127.0.0.1:8000/api/user
+Accept: application/json
+Authorization: Bearer 3|enL7SmJC5rdt4uepzVC9qK8IwFAD6Ka8RCvFtwYL74e80242
+
+### Perfil 2
+GET http://127.0.0.1:8000/api/v1/auth/perfil
+Accept: application/json
+Authorization: Bearer 1|thr0EEbFCiqkjKUCftfDqhMcRcjfs4XfqZdj8egCe6b7cca4
+
+### Logout
+POST http://127.0.0.1:8000/api/v1/auth/logout
+Accept: application/json
+Authorization: Bearer 1|thr0EEbFCiqkjKUCftfDqhMcRcjfs4XfqZdj8egCe6b7cca4
+
